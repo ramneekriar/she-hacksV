@@ -1,4 +1,8 @@
 .App {
   text-align: center;
-  /* background-image: linear-gradient( #449342, #2eaf7d, #3fd0c9); */
+  margin-top: 0;
 } 
+
+ul {
+  margin-top: 0;
+}

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import UserInfo from './UserInfo';
 import FinancialGoals from './FinancialGoals';
 
-function StepperForm( {activeStep, setActiveStep, goals, setGoals}) {
+function StepperForm({ activeStep, setActiveStep, goals, setGoals }) {
 
     const nextStep = () => {
         if (activeStep < 2)
@@ -20,68 +20,63 @@ function StepperForm( {activeStep, setActiveStep, goals, setGoals}) {
             setActiveStep((currentStep) => currentStep - 1);
     }
 
-    switch(activeStep){
+    switch (activeStep) {
         case 0:
-            return(
+            return (
                 <div>
-            <Stepper activeStep={activeStep}>
-                <Step>
-                    <StepLabel>First</StepLabel>
-                </Step>
-                <Step>
-                    <StepLabel>Second</StepLabel>
-                </Step>
-                <Step>
-                    <StepLabel>Third</StepLabel>
-                </Step>
-            </Stepper>
-            <UserInfo></UserInfo>
-            <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => nextStep()}>
-            Next Step
+                    <Stepper activeStep={activeStep}>
+                        <Step>
+                            <StepLabel>First</StepLabel>
+                        </Step>
+                        <Step>
+                            <StepLabel>Second</StepLabel>
+                        </Step>
+                        <Step>
+                            <StepLabel>Third</StepLabel>
+                        </Step>
+                    </Stepper>
+                    <UserInfo></UserInfo>
+                    <Button
+                        variant="outlined"
+                        color="primary"
+                        onClick={() => nextStep()}>
+                        Next Step
             </Button>
-            <br />
-            <br />
-            <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => prevStep()}>
-            Previous Step
-            </Button>
-        </div>
+                    <br />
+                    <br />
+                </div>
             )
         case 1:
             return (
                 <div>
-            <Stepper activeStep={activeStep}>
-                <Step>
-                    <StepLabel>First</StepLabel>
-                </Step>
-                <Step>
-                    <StepLabel>Second</StepLabel>
-                </Step>
-                <Step>
-                    <StepLabel>Third</StepLabel>
-                </Step>
-            </Stepper>
-            <FinancialGoals goals={goals} setGoals={setGoals}></FinancialGoals>
-            <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => nextStep()}>
-            Next Step
-            </Button>
-            <br />
-            <br />
-            <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => prevStep()}>
-            Previous Step
-            </Button>
-        </div>
+                    <Stepper activeStep={activeStep}>
+                        <Step>
+                            <StepLabel>First</StepLabel>
+                        </Step>
+                        <Step>
+                            <StepLabel>Second</StepLabel>
+                        </Step>
+                        <Step>
+                            <StepLabel>Third</StepLabel>
+                        </Step>
+                    </Stepper>
+                    <FinancialGoals goals={goals} setGoals={setGoals}></FinancialGoals>
+                    <form>
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            onClick={() => prevStep()}>
+                            Previous Step
+                        </Button>
+                        &nbsp;&nbsp;&nbsp;
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            onClick={() => nextStep()}>
+                            Next Step
+                        </Button>
+                    </form>
+                </div>
             )
     }
     return (
@@ -97,22 +92,53 @@ function StepperForm( {activeStep, setActiveStep, goals, setGoals}) {
                     <StepLabel>Third</StepLabel>
                 </Step>
             </Stepper>
-            <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => nextStep()}>
-            Next Step
+            <br />
+            <br />
+            <Button
+                variant="outlined"
+                color="primary"
+                onClick={() => prevStep()}>
+                Previous Step
             </Button>
-            <br />
-            <br />
-            <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => prevStep()}>
-            Previous Step
+            &nbsp;&nbsp;&nbsp;
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={() => nextStep()}>
+                Submit
             </Button>
         </div>
     )
 }
 
 export default StepperForm;
+
+// return (
+//     <div>
+//     <Stepper activeStep={activeStep}>
+//         <Step>
+//             <StepLabel>First</StepLabel>
+//         </Step>
+//         <Step>
+//             <StepLabel>Second</StepLabel>
+//         </Step>
+//         <Step>
+//             <StepLabel>Third</StepLabel>
+//         </Step>
+//     </Stepper>
+//     <Button
+//     variant="outlined"
+//     color="primary"
+//     onClick={() => nextStep()}>
+//     Next Step
+//     </Button>
+//     <br />
+//     <br />
+//     <Button
+//     variant="outlined"
+//     color="primary"
+//     onClick={() => prevStep()}>
+//     Previous Step
+//     </Button>
+// </div>
+// )

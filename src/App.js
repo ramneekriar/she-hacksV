@@ -2,10 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import StepperForm from './Components/StepperForm';
 import  Container from '@material-ui/core/Container';
-import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import FinancialGoals from './Components/FinancialGoals';
-import UserInfo from './Components/UserInfo';
 
 
 function App() {

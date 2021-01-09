@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import  Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,6 +33,13 @@ function FinancialGoals( {goals, setGoals}) {
         e.preventDefault();
         setGoals([...goals, {goal: ''}]);
       }
+
+      const goalHandler = (e, index) => {
+        const values = [...goals];
+        values[index][e.target.name] = e.target.value;
+        setGoals(values);
+        console.log(goals);
+      }
       
     return(
     <Container>
@@ -40,15 +47,16 @@ function FinancialGoals( {goals, setGoals}) {
           { goals.map((goals, index) => (
               <div key={index}>
                   <TextField 
-                    name="goals"
-                    label="Financial Goals"
+                    name="goal"
+                    label="Financial Goal"
                     required id="outlined-required" 
-                    variant="outlined">
+                    variant="outlined"
+                    onChange={e => goalHandler(e, index)}>
                 </TextField>
                 <IconButton onClick={e => removeGoal(e, index)}>
                     <RemoveButton />
                 </IconButton>
-                <IconButton onClick={e => addGoal(e)}>
+                <IconButton onClick={e => addGoal(e, index)}>
                     <AddButton />
                 </IconButton>
               </div>
