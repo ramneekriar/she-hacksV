@@ -5,6 +5,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function UserInfo() {
 
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+          }
+        }
+      }))
+
+      const classes = useStyles();
+      
     return(
     <Container>
       <form className={classes.root}>
